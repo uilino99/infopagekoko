@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(Expand-Archive -Path \"C:\\\\Users\\\\fiasi\\\\Downloads\\\\stitch_kokopass_landing_page.zip\" -DestinationPath \"C:\\\\Users\\\\fiasi\\\\Downloads\\\\kokopass_extracted\" -Force)",
+      "Bash(Get-ChildItem -Recurse \"C:\\\\Users\\\\fiasi\\\\Downloads\\\\kokopass_extracted\")",
+      "Bash(Select-Object FullName)",
+      "mcp__Claude_Preview__preview_start"
+    ]
+  }
+}

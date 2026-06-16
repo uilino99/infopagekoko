@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html class="light" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>KokoPass | Ancestral Innovation in Cacao Traceability</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        colors: {
+          "on-secondary-fixed-variant": "#394b3d",
+          "surface-bright": "#fcf9f4",
+          "on-primary-container": "#8a827f",
+          "tertiary-fixed": "#ffe088",
+          "surface-tint": "#635d5a",
+          "on-tertiary": "#ffffff",
+          "on-surface": "#1c1c19",
+          "surface-container-low": "#f6f3ee",
+          "on-tertiary-fixed-variant": "#574500",
+          "primary-fixed": "#eae1dd",
+          "surface-container": "#f0ede8",
+          "on-error": "#ffffff",
+          "on-primary-fixed-variant": "#4b4643",
+          "inverse-surface": "#31302d",
+          "secondary": "#506354",
+          "outline-variant": "#d0c4be",
+          "primary-container": "#1f1b19",
+          "tertiary": "#735c00",
+          "surface-container-highest": "#e5e2dd",
+          "tertiary-container": "#cca730",
+          "outline": "#7f7570",
+          "on-secondary-fixed": "#0e1f13",
+          "on-secondary": "#ffffff",
+          "primary-fixed-dim": "#cec5c1",
+          "inverse-on-surface": "#f3f0eb",
+          "background": "#fcf9f4",
+          "surface-container-lowest": "#ffffff",
+          "on-tertiary-fixed": "#241a00",
+          "on-surface-variant": "#4d4541",
+          "on-background": "#1c1c19",
+          "on-primary": "#ffffff",
+          "tertiary-fixed-dim": "#e9c349",
+          "on-secondary-container": "#546758",
+          "error": "#ba1a1a",
+          "surface-dim": "#dcdad5",
+          "inverse-primary": "#cec5c1",
+          "on-primary-fixed": "#1f1b19",
+          "surface": "#fcf9f4",
+          "secondary-fixed-dim": "#b7ccb9",
+          "on-tertiary-container": "#4f3d00",
+          "surface-variant": "#e5e2dd",
+          "on-error-container": "#93000a",
+          "surface-container-high": "#ebe8e3",
+          "error-container": "#ffdad6",
+          "secondary-fixed": "#d3e8d5",
+          "secondary-container": "#d0e5d2",
+          "primary": "#1A1614"
+        },
+        borderRadius: {
+          DEFAULT: "0.25rem",
+          lg: "0.5rem",
+          xl: "0.75rem",
+          full: "9999px"
+        },
+        spacing: {
+          "stack-lg": "32px",
+          "gutter": "24px",
+          "margin-desktop": "48px",
+          "stack-md": "16px",
+          "container-max": "1280px",
+          "stack-sm": "8px",
+          "section-gap": "80px",
+          "base": "8px"
+        },
+        fontFamily: {
+          "body-lg": ["Manrope"],
+          "headline-lg-mobile": ["Playfair Display"],
+          "label-sm": ["Manrope"],
+          "display-lg": ["Playfair Display"],
+          "body-md": ["Manrope"],
+          "headline-md": ["Playfair Display"],
+          "headline-lg": ["Playfair Display"],
+          "label-md": ["Manrope"]
+        },
+        fontSize: {
+          "body-lg": ["18px", { lineHeight: "1.6", fontWeight: "400" }],
+          "headline-lg-mobile": ["28px", { lineHeight: "1.2", fontWeight: "600" }],
+          "label-sm": ["12px", { lineHeight: "1.2", fontWeight: "500" }],
+          "display-lg": ["48px", { lineHeight: "1.1", letterSpacing: "-0.02em", fontWeight: "700" }],
+          "body-md": ["16px", { lineHeight: "1.5", fontWeight: "400" }],
+          "headline-md": ["24px", { lineHeight: "1.3", fontWeight: "600" }],
+          "headline-lg": ["32px", { lineHeight: "1.2", letterSpacing: "-0.01em", fontWeight: "600" }],
+          "label-md": ["14px", { lineHeight: "1.2", letterSpacing: "0.05em", fontWeight: "600" }]
+        }
+      }
+    }
+  }
+</script>
+<style>
+  body {
+    background-color: #fcf9f4;
+    color: #1c1c19;
+    -webkit-font-smoothing: antialiased;
+  }
+  .material-symbols-outlined {
+    font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+  }
+  .hero-overlay {
+    background: linear-gradient(to right, rgba(26,22,20,0.8) 0%, rgba(26,22,20,0.4) 50%, rgba(26,22,20,0) 100%);
+  }
+  .warm-shadow {
+    box-shadow: 0 10px 30px -10px rgba(26,22,20,0.08);
+  }
+  .certificate-card {
+    border: 1px solid #E5E2DD;
+    transition: all 0.3s ease;
+  }
+  .certificate-card:active {
+    transform: translateY(2px);
+    box-shadow: 0 2px 10px -5px rgba(26,22,20,0.08);
+  }
+  @keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  .animate-fade-in-up {
+    animation: fadeInUp 0.8s ease-out forwards;
+  }
+  .reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .bg-shader-container {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    z-index: -1;
+    pointer-events: none;
+    opacity: 0.3;
+  }
+  /* Mobile menu */
+  #mobile-menu {
+    display: none;
+    flex-direction: column;
+    gap: 1rem;
+    position: fixed;
+    top: 72px; left: 0; right: 0;
+    background: rgba(252,249,244,0.97);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid #d0c4be;
+    padding: 1.5rem 2rem;
+    z-index: 49;
+  }
+  #mobile-menu.open { display: flex; }
+  /* Counter animation */
+  @keyframes countUp {
+    from { opacity: 0; transform: translateY(10px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  .stat-value { animation: countUp 0.6s ease-out forwards; }
+  /* Toast notification */
+  #toast {
+    position: fixed;
+    bottom: 2rem; right: 2rem;
+    background: #1A1614;
+    color: #ffffff;
+    padding: 1rem 1.5rem;
+    border-radius: 0.75rem;
+    font-family: Manrope, sans-serif;
+    font-size: 14px;
+    z-index: 999;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.4s ease;
+    pointer-events: none;
+  }
+  #toast.show {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  /* Form error state */
+  .field-error {
+    outline: 2px solid #ba1a1a !important;
+  }
+  .error-msg {
+    color: #ba1a1a;
+    font-size: 12px;
+    font-family: Manrope, sans-serif;
+    margin-top: 4px;
+    display: none;
+  }
+  .error-msg.visible { display: block; }
+  /* Smooth scroll */
+  html { scroll-behavior: smooth; }
+  /* Stats section counter */
+  .stat-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 1.1;
+    color: #1A1614;
+  }
+</style>
+</head>
+<body class="font-body-md text-body-md">
+
+<!-- Background WebGL Shader -->
+<div class="bg-shader-container">
+  <canvas id="shader-canvas" style="display:block;width:100%;height:100%"></canvas>
+</div>
+
+<!-- Toast Notification -->
+<div id="toast"></div>
+
+<!-- Top Navigation -->
+<nav id="navbar" class="fixed top-0 left-0 w-full z-50 bg-surface/90 backdrop-blur-md border-b border-outline-variant/30">
+  <div class="px-margin-desktop py-4 max-w-container-max mx-auto flex justify-between items-center">
+    <a href="#" class="font-headline-md text-headline-md font-bold text-primary tracking-tight">KokoPass</a>
+    <div class="hidden md:flex items-center gap-gutter">
+      <a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors" href="#story">Story</a>
+      <a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors" href="#how-it-works">How it Works</a>
+      <a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors" href="#partnerships">Partnerships</a>
+      <button onclick="scrollToPartner()" class="bg-primary text-on-primary px-6 py-2.5 rounded-full font-label-md text-label-md hover:opacity-90 transition-opacity">Partner With Us</button>
+    </div>
+    <button id="menu-toggle" class="md:hidden text-primary" aria-label="Toggle menu">
+      <span class="material-symbols-outlined" id="menu-icon">menu</span>
+    </button>
+  </div>
+</nav>
+
+<!-- Mobile Menu -->
+<div id="mobile-menu" role="navigation" aria-label="Mobile navigation">
+  <a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors py-1" href="#story" onclick="closeMobileMenu()">Story</a>
+  <a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors py-1" href="#how-it-works" onclick="closeMobileMenu()">How it Works</a>
+  <a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors py-1" href="#partnerships" onclick="closeMobileMenu()">Partnerships</a>
+  <button onclick="scrollToPartner(); closeMobileMenu();" class="bg-primary text-on-primary px-6 py-3 rounded-full font-label-md text-label-md hover:opacity-90 transition-opacity text-left">Partner With Us</button>
+</div>
+
+<main class="mt-[72px]">
+
+  <!-- Hero Section -->
+  <section class="relative h-[870px] flex items-center overflow-hidden">
+    <div class="absolute inset-0 z-0">
+      <img class="w-full h-full object-cover scale-105 transition-transform duration-[10s] hover:scale-100" alt="A cinematic, wide shot of a lush Samoan cacao plantation at sunrise." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCj5Kn79sqhkxi100uPqgTklodWVcuJxvWbwdnbhOremtZvohUh80e6iwaW9b0R9ppv-b2fR8BXxRm9FE2JXWfGt7DW9ADmg6TvVT8rlcrM0jVX2ljBUMyLd_LoVsi27hQJM__mKDVmHJF_-S52OOKxYOi5lyF9lgxCHvgsHX8PumywjZjBE_syPzpEIDVaXBi-157lRCJeh97cGeMNK4eGBa9eyFG8t-UsTPM9K_Nl4McHRWuucATii0cusXS7FEMOz-QpddLuOAYQ"/>
+      <div class="absolute inset-0 hero-overlay"></div>
+    </div>
+    <div class="relative z-10 px-margin-desktop max-w-container-max mx-auto w-full">
+      <div class="max-w-2xl animate-fade-in-up" style="animation-delay: 0.2s; opacity: 0;">
+        <span class="inline-block py-1 px-3 bg-tertiary-fixed text-on-tertiary-fixed font-label-md text-label-md rounded-full mb-stack-md uppercase tracking-widest">Samoan Origin Traceability</span>
+        <h1 class="font-display-lg text-display-lg text-white mb-stack-md">Ancestral Heritage.<br/>Modern Transparency.</h1>
+        <p class="font-body-lg text-body-lg text-white/90 mb-stack-lg max-w-lg">
+          Connecting Samoan cacao farmers to the global stage through transparent, scannable traceability
+        </p>
+        <div class="flex flex-wrap gap-gutter">
+          <button onclick="scrollToPartner()" class="bg-white text-primary px-8 py-4 rounded-full font-label-md text-label-md hover:bg-surface-container-low transition-colors shadow-lg">Partner With Us</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Impact Stats Strip -->
+  <section class="bg-primary py-12 px-margin-desktop">
+    <div class="max-w-container-max mx-auto grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+      <div class="reveal">
+        <div class="stat-num" data-target="142">0</div>
+        <p class="font-label-md text-label-md text-white/50 uppercase mt-2">Farmers Onboarded</p>
+      </div>
+      <div class="reveal" style="transition-delay:0.1s">
+        <div class="stat-num" data-target="3800">0</div>
+        <p class="font-label-md text-label-md text-white/50 uppercase mt-2">Bags Traced</p>
+      </div>
+      <div class="reveal" style="transition-delay:0.2s">
+        <div class="stat-num" data-target="18">0</div>
+        <p class="font-label-md text-label-md text-white/50 uppercase mt-2">Partner Countries</p>
+      </div>
+      <div class="reveal" style="transition-delay:0.3s">
+        <div class="stat-num" data-target="100">0</div>
+        <p class="font-label-md text-label-md text-white/50 uppercase mt-2">% Free for Farmers</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Our Story Section -->
+  <section class="py-section-gap px-margin-desktop max-w-container-max mx-auto grid grid-cols-1 md:grid-cols-2 gap-section-gap items-center" id="story">
+    <div class="relative group reveal">
+      <div class="absolute -top-4 -left-4 w-24 h-24 bg-tertiary/10 rounded-full blur-3xl group-hover:scale-150 transition-transform duration-700"></div>
+      <img class="w-full aspect-[4/5] object-cover rounded-xl warm-shadow grayscale-[20%] hover:grayscale-0 transition-all duration-500" alt="A portrait-style close-up of sun-dried cacao beans spread out on a traditional hand-woven Samoan mat." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBn4i6HbX-YNBPbwdUkb-ga_wcN2Exj-9Csb8MdMu9TTb5ERSedGvCbvuX6Jha4cL_hHNQRYRlLj5ARpyhbGHrk7uoIebjFrWSMVhzucF3iiXyppXuOJloCOdq4mDd2O54c4rzspi88G7s9kcAIlAW_qwgg5QEYRiiF7QAEmZtlAN145GspPSr9UWbFZhf5dJbp3MOK25lwZmq5CPTfXPA8wKEGWpkSSNALNGuZEmGW8VyEgSuh0lro_g6cMmKYuRVLMcvdk3ThvBYt"/>
+      <div class="absolute bottom-6 right-6 bg-white/90 backdrop-blur-sm p-stack-md rounded-lg certificate-card max-w-[200px]">
+        <p class="font-label-sm text-label-sm text-tertiary mb-1 uppercase tracking-tighter">Award Winner</p>
+        <p class="font-headline-md text-[18px] text-primary">BYU Hawaii 'Empower Your Dreams' 2026</p>
+      </div>
+    </div>
+    <div class="reveal" style="transition-delay: 0.2s;">
+      <h2 class="font-headline-lg text-headline-lg text-primary mb-stack-md">A Legacy Reimagined</h2>
+      <div class="space-y-stack-md font-body-lg text-body-lg text-on-surface-variant">
+        <p>KokoPass was not just an idea. It was deeply Rooted in history of the pacific culture, our founder grew up under the shade of his grandfather's cacao trees, learning that every pod carried the DNA of a thousand years of Samoan agricultural tradition.</p>
+        <p>But tradition alone wasn't enough to secure the future for local farmers. In 2026, KokoPass won the BYU Hawaii 'Empower Your Dreams' competition with a simple but radical idea: give every farmer a digital passport for their harvest.</p>
+        <p>Today, we are working to bridge the gap between ancestral knowledge and global markets, ensuring that every batch of Koko is verified, valued, and completely transparent.</p>
+      </div>
+      <div class="mt-stack-lg border-l-2 border-tertiary pl-stack-md italic text-on-surface">
+        "We aren't just selling cacao; we are sharing the soul of the Pacific with the world."
+      </div>
+    </div>
+  </section>
+
+  <!-- Traceability Flow -->
+  <section class="py-section-gap bg-surface-container-lowest" id="how-it-works">
+    <div class="px-margin-desktop max-w-container-max mx-auto text-center mb-section-gap reveal">
+      <h2 class="font-headline-lg text-headline-lg text-primary mb-stack-sm">The Traceability Journey</h2>
+      <p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto">From the first harvest log to the global export manifest, we ensure every bean's integrity is protected.</p>
+    </div>
+    <div class="px-margin-desktop max-w-container-max mx-auto grid grid-cols-1 md:grid-cols-3 gap-gutter">
+      <div class="p-stack-lg bg-white rounded-xl certificate-card warm-shadow reveal" style="transition-delay: 0.1s;">
+        <div class="w-12 h-12 bg-secondary-container text-on-secondary-container rounded-full flex items-center justify-center mb-stack-md">
+          <span class="material-symbols-outlined">psychiatry</span>
+        </div>
+        <h3 class="font-headline-md text-headline-md text-primary mb-stack-sm">1. Harvest &amp; Log</h3>
+        <p class="font-body-md text-body-md text-on-surface-variant">Local farmers log their harvest on-site. The platform is 100% free for Samoan farmers, lowering the barrier to global markets.</p>
+        <div class="mt-stack-md flex items-center gap-2">
+          <span class="w-2 h-2 rounded-full bg-secondary"></span>
+          <span class="font-label-md text-label-md text-secondary">Free for Farmers</span>
+        </div>
+      </div>
+      <div class="p-stack-lg bg-white rounded-xl certificate-card warm-shadow reveal" style="transition-delay: 0.2s;">
+        <div class="w-12 h-12 bg-tertiary-fixed text-on-tertiary-fixed rounded-full flex items-center justify-center mb-stack-md">
+          <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">verified</span>
+        </div>
+        <h3 class="font-headline-md text-headline-md text-primary mb-stack-sm">2. Verify &amp; Batch</h3>
+        <p class="font-body-md text-body-md text-on-surface-variant">Batches are verified for quality and origin. Each lot is assigned a unique KokoID that tracks its drying, fermentation, and storage.</p>
+        <div class="mt-stack-md flex items-center gap-2">
+          <span class="w-2 h-2 rounded-full bg-tertiary"></span>
+          <span class="font-label-md text-label-md text-tertiary">Immutable Record</span>
+        </div>
+      </div>
+      <div class="p-stack-lg bg-white rounded-xl certificate-card warm-shadow reveal" style="transition-delay: 0.3s;">
+        <div class="w-12 h-12 bg-primary-fixed text-on-primary-fixed rounded-full flex items-center justify-center mb-stack-md">
+          <span class="material-symbols-outlined">public</span>
+        </div>
+        <h3 class="font-headline-md text-headline-md text-primary mb-stack-sm">3. Global Export</h3>
+        <p class="font-body-md text-body-md text-on-surface-variant">Chocolate makers access deep data profiles. Scan a code to see the farmers, the plantation's map, and the batch's flavor notes.</p>
+        <div class="mt-stack-md flex items-center gap-2">
+          <span class="w-2 h-2 rounded-full bg-primary"></span>
+          <span class="font-label-md text-label-md text-on-surface-variant">18 Countries</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Business & Partnerships -->
+  <section class="py-section-gap px-margin-desktop max-w-container-max mx-auto" id="partnerships">
+    <!-- Partner Form -->
+    <div class="bg-white rounded-2xl p-stack-lg md:p-16 certificate-card warm-shadow max-w-4xl mx-auto reveal" id="partner-form-section">
+      <div class="text-center mb-stack-lg">
+        <h3 class="font-headline-lg text-headline-lg text-primary">Join the Network</h3>
+        <p class="font-body-md text-body-md text-on-surface-variant">Request a demonstration or apply for a manufacturing partnership.</p>
+      </div>
+      <form id="partner-form" class="grid grid-cols-1 md:grid-cols-2 gap-gutter" novalidate>
+        <div class="space-y-stack-sm">
+          <label class="font-label-md text-label-md uppercase text-on-surface-variant" for="field-name">Full Name</label>
+          <input id="field-name" class="w-full bg-surface rounded-lg border-none focus:ring-2 focus:ring-tertiary p-4" placeholder="Arthur Guinness" type="text" autocomplete="name"/>
+          <p class="error-msg" id="err-name">Please enter your full name.</p>
+        </div>
+        <div class="space-y-stack-sm">
+          <label class="font-label-md text-label-md uppercase text-on-surface-variant" for="field-company">Company</label>
+          <input id="field-company" class="w-full bg-surface rounded-lg border-none focus:ring-2 focus:ring-tertiary p-4" placeholder="Fine Foods Ltd." type="text" autocomplete="organization"/>
+          <p class="error-msg" id="err-company">Please enter your company name.</p>
+        </div>
+        <div class="md:col-span-2 space-y-stack-sm">
+          <label class="font-label-md text-label-md uppercase text-on-surface-variant" for="field-email">Professional Email</label>
+          <input id="field-email" class="w-full bg-surface rounded-lg border-none focus:ring-2 focus:ring-tertiary p-4" placeholder="arthur@example.com" type="email" autocomplete="email"/>
+          <p class="error-msg" id="err-email">Please enter a valid email address.</p>
+        </div>
+        <div class="md:col-span-2 space-y-stack-sm">
+          <label class="font-label-md text-label-md uppercase text-on-surface-variant" for="field-interest">Interest Area</label>
+          <select id="field-interest" class="w-full bg-surface rounded-lg border-none focus:ring-2 focus:ring-tertiary p-4">
+            <option value="">Select an area…</option>
+            <option>Import Verification</option>
+            <option>Enterprise Integration</option>
+            <option>Investment Opportunities</option>
+            <option>Farmer Onboarding</option>
+          </select>
+          <p class="error-msg" id="err-interest">Please select an area of interest.</p>
+        </div>
+        <div class="md:col-span-2 mt-stack-md">
+          <button type="submit" id="submit-btn" class="w-full bg-primary text-white py-4 rounded-full font-label-md text-label-md hover:opacity-90 transition-opacity flex items-center justify-center gap-2">
+            <span id="submit-label">Send Application</span>
+            <span id="submit-spinner" class="material-symbols-outlined hidden" style="font-size:18px;">sync</span>
+          </button>
+        </div>
+      </form>
+      <!-- Success state (hidden) -->
+      <div id="form-success" class="hidden text-center py-8">
+        <span class="material-symbols-outlined text-secondary text-5xl mb-4 block" style="font-variation-settings:'FILL' 1;">check_circle</span>
+        <h4 class="font-headline-md text-headline-md text-primary mb-2">Application Received</h4>
+        <p class="font-body-md text-body-md text-on-surface-variant">Our partnerships team will contact you within 2 business days.</p>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- Footer -->
+<footer class="bg-surface-container-lowest border-t border-outline-variant/50 w-full py-section-gap px-margin-desktop">
+  <div class="max-w-container-max mx-auto flex flex-col md:flex-row justify-between items-start gap-stack-lg">
+    <div class="max-w-sm">
+      <div class="font-headline-md text-headline-md font-bold text-primary mb-stack-md">KokoPass</div>
+      <p class="font-body-md text-body-md text-on-surface-variant mb-stack-md">
+        Empowering Samoan agricultural heritage through modern blockchain traceability and global market access.
+      </p>
+      <p class="font-label-sm text-label-sm text-on-surface-variant opacity-60">
+        © 2026 KokoPass. Ancestral Innovation in Cacao Traceability.
+      </p>
+    </div>
+    <div class="grid grid-cols-2 md:grid-cols-3 gap-gutter">
+      <div class="space-y-2">
+        <p class="font-label-md text-label-md font-bold mb-4">Explore</p>
+        <a class="block font-label-md text-label-md text-on-secondary-fixed-variant hover:text-tertiary transition-colors" href="#story">Story</a>
+        <a class="block font-label-md text-label-md text-on-secondary-fixed-variant hover:text-tertiary transition-colors" href="#how-it-works">How it Works</a>
+        <a class="block font-label-md text-label-md text-on-secondary-fixed-variant hover:text-tertiary transition-colors" href="#partnerships">Partnerships</a>
+      </div>
+      <div class="space-y-2">
+        <p class="font-label-md text-label-md font-bold mb-4">Support</p>
+        <a class="block font-label-md text-label-md text-on-secondary-fixed-variant hover:text-tertiary transition-colors" href="#" onclick="showToast('Privacy policy coming soon.')">Privacy Policy</a>
+        <a class="block font-label-md text-label-md text-on-secondary-fixed-variant hover:text-tertiary transition-colors" href="#" onclick="showToast('Terms of service coming soon.')">Terms of Service</a>
+        <a class="block font-label-md text-label-md text-on-secondary-fixed-variant hover:text-tertiary transition-colors" href="#" onclick="scrollToPartner()">Contact Us</a>
+      </div>
+      <div class="space-y-2">
+        <p class="font-label-md text-label-md font-bold mb-4">Social</p>
+        <div class="flex gap-4">
+          <a href="https://www.instagram.com/kokopass.ws?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" rel="noopener noreferrer" title="Instagram" class="text-on-surface-variant hover:text-primary transition-colors">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+              <circle cx="12" cy="12" r="4.5"/>
+              <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/>
+            </svg>
+          </a>
+          <a href="mailto:kokopassws@gmail.com" title="Email us" class="text-on-surface-variant hover:text-primary transition-colors">
+            <span class="material-symbols-outlined">mail</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+/* =====================
+   WebGL Background Shader
+   ===================== */
+(function() {
+  const canvas = document.getElementById('shader-canvas');
+  function syncSize() {
+    const w = canvas.clientWidth  || 1280;
+    const h = canvas.clientHeight || 720;
+    if (canvas.width !== w || canvas.height !== h) {
+      canvas.width = w; canvas.height = h;
+    }
+  }
+  if (typeof ResizeObserver !== 'undefined') {
+    new ResizeObserver(syncSize).observe(canvas);
+  }
+  syncSize();
+  const gl = canvas.getContext('webgl') || canvas.getContext('experimental-webgl');
+  if (!gl) return;
+  const vs = `attribute vec2 a_position;
+varying vec2 v_texCoord;
+void main() {
+  v_texCoord = a_position * 0.5 + 0.5;
+  gl_Position = vec4(a_position, 0.0, 1.0);
+}`;
+  const fs = `precision highp float;
+uniform float u_time;
+uniform vec2 u_resolution;
+varying vec2 v_texCoord;
+void main() {
+    vec2 uv = v_texCoord;
+    float wave1 = sin(uv.x * 3.0 + u_time * 0.5) * 0.1;
+    float wave2 = sin(uv.y * 2.5 - u_time * 0.4) * 0.1;
+    vec3 color1 = vec3(0.988, 0.976, 0.957);
+    vec3 color2 = vec3(0.863, 0.855, 0.835);
+    float noise = sin(uv.x * 10.0 + wave1 * 5.0) * cos(uv.y * 8.0 + wave2 * 5.0);
+    float mask = smoothstep(-1.0, 1.0, noise);
+    vec3 finalColor = mix(color1, color2, mask * 0.3);
+    float glow = smoothstep(0.8, 0.0, distance(uv, vec2(0.5 + sin(u_time * 0.2) * 0.2, 0.2)));
+    finalColor += vec3(0.1, 0.08, 0.05) * glow;
+    gl_FragColor = vec4(finalColor, 1.0);
+}`;
+  function cs(type, src) {
+    const s = gl.createShader(type);
+    gl.shaderSource(s, src); gl.compileShader(s); return s;
+  }
+  const prog = gl.createProgram();
+  gl.attachShader(prog, cs(gl.VERTEX_SHADER, vs));
+  gl.attachShader(prog, cs(gl.FRAGMENT_SHADER, fs));
+  gl.linkProgram(prog); gl.useProgram(prog);
+  const buf = gl.createBuffer();
+  gl.bindBuffer(gl.ARRAY_BUFFER, buf);
+  gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([-1,-1,1,-1,-1,1,1,1]), gl.STATIC_DRAW);
+  const pos = gl.getAttribLocation(prog, 'a_position');
+  gl.enableVertexAttribArray(pos);
+  gl.vertexAttribPointer(pos, 2, gl.FLOAT, false, 0, 0);
+  const uTime = gl.getUniformLocation(prog, 'u_time');
+  const uRes  = gl.getUniformLocation(prog, 'u_resolution');
+  function render(t) {
+    if (typeof ResizeObserver === 'undefined') syncSize();
+    gl.viewport(0, 0, canvas.width, canvas.height);
+    if (uTime) gl.uniform1f(uTime, t * 0.001);
+    if (uRes)  gl.uniform2f(uRes, canvas.width, canvas.height);
+    gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
+    requestAnimationFrame(render);
+  }
+  render(0);
+})();
+
+/* =====================
+   Scroll Reveal Observer
+   ===================== */
+const revealObserver = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('active'); });
+}, { root: null, rootMargin: '0px', threshold: 0.1 });
+document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+/* =====================
+   Animated Stat Counters
+   ===================== */
+function animateCounter(el, target, duration = 1200) {
+  let start = null;
+  const suffix = target === 100 ? '%' : '+';
+  function step(ts) {
+    if (!start) start = ts;
+    const progress = Math.min((ts - start) / duration, 1);
+    el.textContent = Math.floor(progress * target) + suffix;
+    if (progress < 1) requestAnimationFrame(step);
+  }
+  requestAnimationFrame(step);
+}
+const statObserver = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      const target = parseInt(e.target.dataset.target);
+      animateCounter(e.target, target);
+      statObserver.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.5 });
+document.querySelectorAll('.stat-num').forEach(el => statObserver.observe(el));
+
+/* =====================
+   Mobile Menu
+   ===================== */
+const menuToggle = document.getElementById('menu-toggle');
+const mobileMenu = document.getElementById('mobile-menu');
+const menuIcon   = document.getElementById('menu-icon');
+menuToggle.addEventListener('click', () => {
+  const isOpen = mobileMenu.classList.toggle('open');
+  menuIcon.textContent = isOpen ? 'close' : 'menu';
+  menuToggle.setAttribute('aria-expanded', isOpen);
+});
+function closeMobileMenu() {
+  mobileMenu.classList.remove('open');
+  menuIcon.textContent = 'menu';
+}
+// Close when clicking outside
+document.addEventListener('click', (e) => {
+  if (!mobileMenu.contains(e.target) && !menuToggle.contains(e.target)) {
+    closeMobileMenu();
+  }
+});
+
+/* =====================
+   Navbar scroll opacity
+   ===================== */
+window.addEventListener('scroll', () => {
+  const nav = document.getElementById('navbar');
+  nav.style.boxShadow = window.scrollY > 20 ? '0 2px 24px rgba(26,22,20,0.08)' : 'none';
+});
+
+/* =====================
+   Scroll helpers
+   ===================== */
+function scrollToPartner() {
+  document.getElementById('partner-form-section').scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+
+/* =====================
+   Toast Notification
+   ===================== */
+let toastTimer;
+function showToast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(() => t.classList.remove('show'), 3000);
+}
+
+/* =====================
+   Partner Form Validation
+   ===================== */
+document.getElementById('partner-form').addEventListener('submit', function(e) {
+  e.preventDefault();
+  let valid = true;
+
+  function validate(fieldId, errId, check) {
+    const field = document.getElementById(fieldId);
+    const err   = document.getElementById(errId);
+    if (!check(field.value)) {
+      field.classList.add('field-error');
+      err.classList.add('visible');
+      valid = false;
+    } else {
+      field.classList.remove('field-error');
+      err.classList.remove('visible');
+    }
+  }
+
+  validate('field-name',     'err-name',     v => v.trim().length >= 2);
+  validate('field-company',  'err-company',  v => v.trim().length >= 2);
+  validate('field-email',    'err-email',    v => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v.trim()));
+  validate('field-interest', 'err-interest', v => v !== '');
+
+  if (!valid) return;
+
+  // Simulate submission
+  const btn     = document.getElementById('submit-btn');
+  const label   = document.getElementById('submit-label');
+  const spinner = document.getElementById('submit-spinner');
+  btn.disabled  = true;
+  label.textContent = 'Sending…';
+  spinner.classList.remove('hidden');
+
+  setTimeout(() => {
+    document.getElementById('partner-form').classList.add('hidden');
+    document.getElementById('form-success').classList.remove('hidden');
+    showToast('Application submitted successfully!');
+  }, 1800);
+});
+
+// Clear errors on input
+['field-name','field-company','field-email','field-interest'].forEach(id => {
+  const el = document.getElementById(id);
+  el.addEventListener('input', () => {
+    el.classList.remove('field-error');
+    document.getElementById('err-' + id.replace('field-','')).classList.remove('visible');
+  });
+});
+</script>
+</body>
+</html>
